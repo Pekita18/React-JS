@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import ItemCount from "./ItemCount";
 import ItemList from "./ItemList"
+import ItemDetailContainer from "./ItemDetailContainer";
 
 const baseDatos = [
     {id: 1, title: "Buzo Azul", description: "Este es un buzo de color azul", price: 3000, pictureUrl: "https://via.placeholder.com/150" },
@@ -37,7 +38,8 @@ const ItenListContainer = (prop) => {
         <>
             <h1 style={style.h1}>{prop.greeting}</h1>
             <ItemCount stock = {12} initial = {0} onAdd = {onAdd} />
-            <ItemList items = {items}/>
+            <ItemList items = {items} />
+            <ItemDetailContainer />
         </>
     )
 }
