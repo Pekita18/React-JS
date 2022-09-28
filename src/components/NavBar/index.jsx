@@ -1,5 +1,5 @@
 import React from "react";
-import CartWidget from "./CartWidget";
+import { CartWidget } from "../CartWidget";
 
 const NavBar = () => {
     return (
@@ -28,10 +28,11 @@ const style = {
 
     navBar: {
         gridColumn: '2 / 10',
-        margin: '20px 0px',
+        margin: '40px 0px',
         display: 'flex',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroungColor: 'white'
     },
 
     logo: {
@@ -61,4 +62,4 @@ const style = {
 
 };
 
-export default NavBar
+export { NavBar };

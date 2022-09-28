@@ -17,4 +17,4 @@ const style = {
 };
 
 
-export default CartWidget;
+export { CartWidget };

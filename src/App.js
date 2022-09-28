@@ -1,15 +1,15 @@
 import React from "react";
-import NavBar from "./components/NavBar";
-import ItenListContainer from "./components/ItemListContainer";
+import { NavBar } from "./components/NavBar";
+import { ItenListContainer } from "./components/ItemListContainer";
+import { ItemDetailContainer } from "./components/ItemDetailContainer";
 
 function App() {
-
-  const titulo = "HOLA ESTAS EN... VALKA"
 
   return (
     <div style={style.container}>
       <NavBar />
-      <ItenListContainer greeting = {titulo} />
+      <ItenListContainer />
+      <ItemDetailContainer />
     </div>
   );
 };

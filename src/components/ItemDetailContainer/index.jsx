@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import ItemDetail from "./ItemDetail";
+import { ItemDetail } from "../ItemDetail";
 
 const ItemDetailContainer = () => {
 
@@ -20,9 +20,9 @@ const ItemDetailContainer = () => {
     const precio = "$ 1800"
 
     return(
-        <ItemDetail name={product.name} image={product.image} parrafo={parrafo} precio={precio}/>
+        <ItemDetail name={product?.name} image={product?.image} parrafo={parrafo} precio={precio}/>
     )
 
 }
 
-export default ItemDetailContainer;
+export { ItemDetailContainer };

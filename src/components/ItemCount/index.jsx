@@ -96,4 +96,4 @@ const style = {
 
 }
 
-export default ItemCount;
+export { ItemCount };
