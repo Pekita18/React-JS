@@ -1,24 +1,31 @@
 import React from "react";
 import { CartWidget } from "../CartWidget";
+import { Nav } from "./Nav";
 
 const NavBar = () => {
+
+    const categorias = [
+        { id: 1, name: 'Inicio', ruta: '/inicio'},
+        { id: 2, name: 'Sobre', ruta: '#sobre'},
+        { id: 3, name: 'Productos', ruta: '#productos'},
+        { id: 4, name: 'Mujer', ruta: 'categoria/mujer'},
+        { id: 5, name: 'Hombre', ruta: 'categoria/hombre'},
+        { id: 6, name: 'Niños', ruta: 'categoria/niños'},
+    ]
+
     return (
         <header style={style.navBar}>
             <div style={style.logo}>
                 <h1>Valka</h1>
             </div>
             <div>
-                <ul style={style.options}>
-                    <a href="" style={style.a}><li>Inicio</li></a>
-                    <a href="" style={style.a}><li>Sobre</li></a>
-                    <a href="" style={style.a}><li>Productos</li></a>
-                    <a href="" style={style.a}><li>Envios</li></a>
-                    <a href="" style={style.a}><li>Contacto</li></a>
-                </ul>
+                <div style={style.a}>
+                    <Nav categorias = {categorias} />
+                </div>
             </div>
             <div>
                 <CartWidget />
-                <i class="fa-regular fa-user" style={style.icons}></i>
+                <i className="fa-regular fa-user" style={style.icons}></i>
             </div>
         </header>
     );

@@ -22,7 +22,6 @@ const ItemDetailContainer = () => {
     return(
         <ItemDetail name={product?.name} image={product?.image} parrafo={parrafo} precio={precio}/>
     )
-
 }
 
 export { ItemDetailContainer };

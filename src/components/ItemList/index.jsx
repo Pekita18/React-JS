@@ -1,13 +1,24 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
 import { Item } from '../Item'
 
 const ItemList = ({items}) => {
 
+    let { ProductoId } = useParams();
+    console.log(ProductoId)
+
+    const [cate, setCate] = useState([])
+
+    useEffect(() => {
+        let cate = items.filter(categ => categ.categoria == ProductoId);
+        setCate(cate)
+    }, [ProductoId])
+
     return(
-        <div style={style.container}>
+        <div id='productos' style={style.container}>
             <h3 style={style.h3}>Los buzos mas vendidos</h3>
             <div style={style.items}>
-                {items.map((item) => <Item item = {item}/>)}
+                {cate.map((item) => <Item item = {item} key = {item.id}/>)}
              </div>
              <a href="" style={style.a}>Ver Mas</a>
         </div>
@@ -30,7 +41,7 @@ const style = {
         gridColumn: '2 / 10',
         display: 'flex',
         justifyContent: 'space-between',
-        marginBottom: '50px',
+        marginBottom: '100px',
     },
 
     a: {

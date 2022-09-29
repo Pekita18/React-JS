@@ -3,7 +3,7 @@ import React from "react";
 const ItemDetail= ({name, image, parrafo, precio}) => {
 
     return(
-        <div>
+        <div style={styles.container}>
             <img src={image}/>
             <h1>{name}</h1>
             <p>{parrafo}</p>
@@ -11,6 +11,12 @@ const ItemDetail= ({name, image, parrafo, precio}) => {
         </div>  
     )
 
+}
+
+const styles = {
+    container: {
+        gridColumn: '2 / 10'
+    }
 }
 
 export { ItemDetail };

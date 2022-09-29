@@ -2,27 +2,27 @@ import React from "react";
 
 const Sobre = () => {
     return(
-        <div style={styles.container}>
+        <div id="sobre" style={styles.container}>
             <span style={styles.top}>#1 TOP EN BUZOS</span>
             <h3 style={styles.h3}>Sobre la Tienda Valka</h3>
             <div style={styles.cards}>
                 <div>
-                    <i style={styles.i} class="fa-sharp fa-solid fa-truck"></i>
+                    <i style={styles.i} className="fa-sharp fa-solid fa-truck"></i>
                     <h5 style={styles.h5}>Envio Gratis</h5>
                     <p style={styles.p}>Lorem ipsum dolor sit.</p>
                 </div>
                 <div>
-                    <i style={styles.i1} class="fa-regular fa-money-bill-1"></i>
+                    <i style={styles.i1} className="fa-regular fa-money-bill-1"></i>
                     <h5 style={styles.h5}>Ofertas Unicas</h5>
                     <p style={styles.p}>Lorem ipsum dolor sit.</p>
                 </div>
                 <div>
-                    <i style={styles.i2} class="fa-solid fa-shirt"></i>
+                    <i style={styles.i2} className="fa-solid fa-shirt"></i>
                     <h5 style={styles.h5}>Calidad Original</h5>
                     <p style={styles.p}>Lorem ipsum dolor sit.</p>
                 </div>
                 <div>
-                    <i style={styles.i3} class="fa-sharp fa-solid fa-credit-card"></i>
+                    <i style={styles.i3} className="fa-sharp fa-solid fa-credit-card"></i>
                     <h5 style={styles.h5}>Medios de Pago</h5>
                     <p style={styles.p}>Lorem ipsum dolor sit.</p>
                 </div>

@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
     return(
-        <div style={styles.container}>
+        <div id="footer" style={styles.container}>
             <div>
-                <h5>Menu</h5>
+                <h5 style={styles.h5}>Menu</h5>
                 <div style={styles.list}>
                     <a style={styles.a} href="">Inicio</a>
                     <a style={styles.a} href="">Sobre</a>
@@ -13,20 +13,20 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <h5>Contacto</h5>
+                <h5 style={styles.h5}>Contacto</h5>
                 <div style={styles.list}>
-                    <a href="">Telefono</a>
-                    <a href="">Email</a>
-                    <a href="">Ubicaciones</a>
-                    <a href="">Reclamos</a>
+                    <a style={styles.a} href="">Telefono</a>
+                    <a style={styles.a} href="">Email</a>
+                    <a style={styles.a} href="">Ubicaciones</a>
+                    <a style={styles.a} href="">Reclamos</a>
                 </div>
             </div>
             <div>
-                <h5>Social</h5>
+                <h5 style={styles.h5}>Social</h5>
                 <div>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
+                    <i style={styles.i} className="fa-brands fa-instagram"></i>
+                    <i style={styles.i} className="fa-brands fa-facebook"></i>
+                    <i style={styles.i} className="fa-brands fa-whatsapp"></i>
                 </div>
             </div>
         </div>
@@ -37,7 +37,8 @@ const styles = {
     container: {
         gridColumn: '2 / 10',
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        margin: '100px 0px',
     },
 
     list: {
@@ -45,8 +46,21 @@ const styles = {
         flexDirection: 'column'
     },
 
-    a: {
+    h5: {
+        fontSize: '1.3rem'
+    },
 
+    a: {
+        textDecoration: 'none',
+        color: 'black',
+        fontSize: '1rem',
+        margin: '5px 0px'
+    },
+
+    i: {
+        marginRight: '20px',
+        fontSize: '1.2rem',
+        cursor: 'pointer'
     }
 }
 

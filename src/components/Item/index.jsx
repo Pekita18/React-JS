@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import { NavLink } from 'react-router-dom';
 
 const Item = ({item}) => {
 
@@ -10,19 +11,29 @@ const Item = ({item}) => {
         document.getElementById(item.id).style.display = 'none';
     }
 
+    const [itemId, setItemId] = useState(0)
+
+    const tocar = () => {
+        console.log(item.id)
+        setItemId(item.id)
+    }
+
+
     return(
-        <div style={styles.container}>
-            <div style={styles.item}>
-                <div onMouseOver={mostrar} onMouseOut={quitar} style={styles.imgs}>
-                    <img style={styles.img} src={item.pictureUrl} alt="" />
-                    <div id={item.id} style={styles.text}>
-                        <h3 style={styles.h3}>{item.title}</h3>
-                        <p style={styles.p}>{item.description}</p>
-                        <span style={styles.span}>$ {item.price}</span>
+        <NavLink to={itemId} onClick={tocar}>
+            <div style={styles.container}>
+                <div style={styles.item}>
+                    <div onMouseOver={mostrar} onMouseOut={quitar} style={styles.imgs}>
+                        <img style={styles.img} src={item.pictureUrl} alt="" />
+                        <div id={item.id} style={styles.text}>
+                            <h3 style={styles.h3}>{item.title}</h3>
+                            <p style={styles.p}>{item.description}</p>
+                            <span style={styles.span}>$ {item.price}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+             </div>
+        </NavLink>
     )
 }
 
