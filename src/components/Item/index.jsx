@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { ItemDetailContainer } from "../ItemDetailContainer";
 
 const Item = ({item}) => {
 
@@ -11,16 +12,8 @@ const Item = ({item}) => {
         document.getElementById(item.id).style.display = 'none';
     }
 
-    const [itemId, setItemId] = useState(0)
-
-    const tocar = () => {
-        console.log(item.id)
-        setItemId(item.id)
-    }
-
-
     return(
-        <NavLink to={itemId} onClick={tocar}>
+        <Link to={item.ruta}>
             <div style={styles.container}>
                 <div style={styles.item}>
                     <div onMouseOver={mostrar} onMouseOut={quitar} style={styles.imgs}>
@@ -33,7 +26,7 @@ const Item = ({item}) => {
                     </div>
                 </div>
              </div>
-        </NavLink>
+        </Link>
     )
 }
 

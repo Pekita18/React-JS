@@ -23,7 +23,8 @@ const styles = {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '2rem 0rem',
-        paddingBottom: '10rem'
+        paddingBottom: '10rem',
+        marginTop: '50px'
     },
 
     h1: {

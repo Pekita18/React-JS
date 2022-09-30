@@ -1,26 +1,44 @@
 import React, {useEffect, useState} from "react";
+import { useParams } from 'react-router-dom';
 import { ItemDetail } from "../ItemDetail";
+import buzoBlanco from '../../img/buzoBlanco.png'
+import buzoNegro from '../../img/buzoNegro.png'
+import buzoRosa from '../../img/buzoRosa.png'
+import buzoMarron from '../../img/buzoMarron.png'
+import buzoAzulN from '../../img/buzoAzulN.png'
+import buzoBlancoH from '../../img/buzoBlancoH.png'
+import buzoGrisH from '../../img/buzoGrisH.png'
+import buzoNarajanjaN from '../../img/buzoNaranjaN.png'
+import buzoNegroN from '../../img/buzoNegroN.png'
+import buzoRojoH from '../../img/buzoRojoH.png'
+import buzoVerdeH from '../../img/buzoVerdeH.png'
+import buzoVIoletaN from '../../img/buzoVioletaN.png'
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({prop}) => {
 
-    const [product, setProduct] = useState();
+    const baseDatos = [
+        {id: 1, title: "Valka Blanco", description: "Este es un buzo de color blanco", price: 3000, pictureUrl: buzoBlanco, categoria: 'mujer'},
+        {id: 2, title: "Valka Marron", description: "Este es un buzo de color rojo", price: 3500, pictureUrl: buzoMarron, categoria: 'mujer' },
+        {id: 3, title: "Valka Negro", description: "Este es un buzo de color negro", price: 4000, pictureUrl: buzoNegro, categoria: 'mujer' },
+        {id: 4, title: "Valka Rosa", description: "Este es un buzo de color rosa", price: 2500, pictureUrl: buzoRosa, categoria: 'mujer' },
+        {id: 5, title: "Valka Blanco", description: "Este es un buzo de color blanco", price: 2500, pictureUrl: buzoBlancoH, categoria: 'hombre' },
+        {id: 6, title: "Valka Gris", description: "Este es un buzo de color gris", price: 2500, pictureUrl: buzoGrisH, categoria: 'hombre' },
+        {id: 7, title: "Valka Verde", description: "Este es un buzo de color negro", price: 2500, pictureUrl: buzoVerdeH, categoria: 'hombre' },
+        {id: 8, title: "Valka Rojo", description: "Este es un buzo de color rojo", price: 2500, pictureUrl: buzoRojoH, categoria: 'hombre' },
+        {id: 9, title: "Valka Azul", description: "Este es un buzo de color azul para niños.", price: 2500, pictureUrl: buzoAzulN, categoria: 'niños' },
+        {id: 10, title: "Valka Naranja", description: "Este es un buzo de color naranaja para niños", price: 2500, pictureUrl: buzoNarajanjaN, categoria: 'niños' },
+        {id: 11, title: "Valka Negro", description: "Este es un buzo de color negro para niños", price: 2500, pictureUrl: buzoNegroN, categoria: 'niños' },
+        {id: 12, title: "Valka Violeta", description: "Este es un buzo de color violeta para niños", price: 2500, pictureUrl: buzoVIoletaN, categoria: 'niños' },
+    ];
 
-    const fetchApi = async () => {
-        fetch('https://rickandmortyapi.com/api/character/74')
-        .then(res => res.json())
-        .then(json => setProduct(json))
-    }
-
-    useEffect(() => {
-        fetchApi();
-    }, []);
-
-    const parrafo = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, similique dicta assumenda rerum illo optio, voluptatem libero ipsum esse harum quaerat, ipsa debitis quae necessitatibus ea molestias! Veritatis, laborum officiis!";
-
-    const precio = "$ 1800"
+    let { ProductoId } = useParams();
+    
+    let mostrar = baseDatos.filter(prod => prod.id == ProductoId);
 
     return(
-        <ItemDetail name={product?.name} image={product?.image} parrafo={parrafo} precio={precio}/>
+        <>
+            {mostrar.map((item) => <ItemDetail produc = {item} key = {item.id}/>)}
+        </>
     )
 }
 

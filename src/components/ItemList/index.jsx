@@ -1,24 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React  from 'react';
 import { useParams } from 'react-router-dom';
 import { Item } from '../Item'
 
 const ItemList = ({items}) => {
 
-    let { ProductoId } = useParams();
-    console.log(ProductoId)
-
-    const [cate, setCate] = useState([])
-
-    useEffect(() => {
-        let cate = items.filter(categ => categ.categoria == ProductoId);
-        setCate(cate)
-    }, [ProductoId])
+    let { CategoriaId } = useParams();
+    
+    let cambiar = items.filter(categ => categ.categoria == CategoriaId);
 
     return(
         <div id='productos' style={style.container}>
             <h3 style={style.h3}>Los buzos mas vendidos</h3>
             <div style={style.items}>
-                {cate.map((item) => <Item item = {item} key = {item.id}/>)}
+                {cambiar.map((item) => <Item item = {item} key = {item.id}/>)}
              </div>
              <a href="" style={style.a}>Ver Mas</a>
         </div>

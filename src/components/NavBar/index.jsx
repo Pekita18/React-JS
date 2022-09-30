@@ -5,7 +5,7 @@ import { Nav } from "./Nav";
 const NavBar = () => {
 
     const categorias = [
-        { id: 1, name: 'Inicio', ruta: '/inicio'},
+        { id: 1, name: 'Inicio', ruta: '/'},
         { id: 2, name: 'Sobre', ruta: '#sobre'},
         { id: 3, name: 'Productos', ruta: '#productos'},
         { id: 4, name: 'Mujer', ruta: 'categoria/mujer'},
@@ -35,11 +35,15 @@ const style = {
 
     navBar: {
         gridColumn: '2 / 10',
-        margin: '40px 0px',
+        marginLeft: '130px',
+        padding: '20px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroungColor: 'white'
+        background: 'white',
+        position: 'fixed',
+        top: '0',
+        width: '80%',
     },
 
     logo: {
