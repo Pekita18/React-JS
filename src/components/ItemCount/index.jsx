@@ -1,47 +1,35 @@
-import React, {useState} from 'react';
+import React, {useRef} from 'react';
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial, recibirCantidad}) => {
 
-    const [cantidad, setCantidad] = useState(initial);
-
-    const restar = () => {
-        if(cantidad <= 0){
-            alert("No se puede quitar mas objetos");
-        }else{
-            setCantidad(cantidad - 1);
-        };
-    };
-
-    const sumar = () => {
-        if(cantidad >= stock){
-            alert("No se puede superar la cantidad del Stock");
-        }else{
-            setCantidad(cantidad + 1);
-        }
-    };
+    const cantidad = useRef(initial);   
 
     const agregar = () => {
-        if(cantidad <= 0){
-            alert("Para agregar al carrito necesita un objeto.")
-        }else{
-            setCantidad(0);
-            onAdd();
+        let valor = cantidad.current.value;
+        let container = document.getElementById('container');
+
+        const correcto = () => {
+            container.innerHTML = '';
+            recibirCantidad(valor, 'Se agregro al carrito', '');
         }
+
+        const menos = () => {
+            valor > 0 ? correcto() : recibirCantidad(valor, '', 'No es un dato valido.')
+        }
+ 
+        const vereficar = () => {
+            valor > stock ? recibirCantidad(valor, '', 'No hay stock.') : menos();
+        }
+
+        isNaN(valor) ? recibirCantidad(valor, '', 'No son caracteres validos.') : vereficar();
+
     }
 
     return(
         <div style={style.cart}>
-            <div style={style.cartContent}>
-                <h1 style={style.h1}>Zapatillas Nike</h1>
-                <div>
-                    <span style={style.stock}>Stock: {stock}</span>
-                    <div style={style.carrito}>
-                        <button style={style.boton} onClick={restar}>Restar</button>
-                        <span>{cantidad}</span>
-                        <button style={style.boton} onClick={sumar}>Sumar</button>
-                    </div>
-                    <button style={style.subir} onClick={agregar}>Agregar</button>
-                </div>
+            <div id='container'>
+                <input type="text" ref={cantidad} defaultValue={initial} itemID='cant' style={style.cantidad}/>
+                <button style={style.subir} onClick={agregar}>Agregar</button>
             </div>
         </div>
     );
@@ -53,46 +41,27 @@ const style = {
         marginTop: '1rem',
     },
 
-    cartContent: {
-        display: 'inline-block',
-        border: '2px solid grey',
-        padding: '10px'
-    },
-
-    h1: {
-        fontSize: '1.2rem',
-        textAlign: 'center'
-    },
-
-    stock: {
-        fontWeight: '600',
-        textAlign: 'end',
-        margin: '0px 10px'
-    },
-
-    carrito: {
+    cantidad: {
+        fontFamily: 'Poppins',
+        fontSize: '0.8rem',
+        color: 'rgb(67, 168, 101)',
         textAlign: 'center',
-        fontWeight: '600',  
-        margin: '20px 0px'
+        width: '33px',
+        height: '35px',
+        border: '1px solid #d1d1d1'
     },
 
-    boton: {
-        margin: '0px 10px',
-        background: 'white',
-        border: '1px solid',
-        borderRadius: '40px',
-        padding: '5px',
-        cursor: 'pointer'
-    },
-    
     subir: {
-        margin: '0px 10px',
-        padding: '5px 40px',
-        background: 'white',
-        border: '1px solid',
-        borderRadius: '40px',
-        cursor: 'pointer'
-    }
+        color: 'white',
+        fontWeight: '600',
+        backgroundColor: 'rgb(153, 153, 153)',
+        padding: '13px 50px',    
+        borderRadius: '10px',
+        border: 'none',
+        cursor: 'pointer',
+        marginTop: '30px',
+        marginLeft: '30px',
+    },
 
 }
 

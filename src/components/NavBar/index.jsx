@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { CartWidget } from "../CartWidget";
 import { Nav } from "./Nav";
 
@@ -24,7 +25,7 @@ const NavBar = () => {
                 </div>
             </div>
             <div>
-                <CartWidget />
+                <Link to='/cart'><CartWidget /></Link>
                 <i className="fa-regular fa-user" style={style.icons}></i>
             </div>
         </header>
