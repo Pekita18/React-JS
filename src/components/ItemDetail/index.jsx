@@ -1,13 +1,16 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from 'react-router-dom';
+import { Context } from "../CartContext";
 import {ItemCount} from "../ItemCount"
 
 const ItemDetail= ({produc}) => {
     let cate = produc.categoria.charAt(0).toUpperCase() + produc.categoria.slice(1);
-    let cantidad = '';
+    const { addItem, isInCart } = useContext(Context)
 
     const siEs = (si) => {
-        cantidad = si; 
+        addItem(produc, si)
+        isInCart(produc.id)
         document.getElementById('cart').style.display = "block";
     }
 
@@ -19,7 +22,6 @@ const ItemDetail= ({produc}) => {
         inlerta.innerHTML = incorrec;
 
         incorrec == '' ? siEs(val) : console.log('No es numero valido.');
-        console.log(cantidad)
     }
 
     return(

@@ -18,7 +18,7 @@ const ItemCount = ({stock, initial, recibirCantidad}) => {
         }
  
         const vereficar = () => {
-            valor > stock ? recibirCantidad(valor, '', 'No hay stock.') : menos();
+            parseInt(valor) > parseInt(stock) ? recibirCantidad(valor, '', 'No hay stock.') : menos();
         }
 
         isNaN(valor) ? recibirCantidad(valor, '', 'No son caracteres validos.') : vereficar();

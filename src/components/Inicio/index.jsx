@@ -6,7 +6,7 @@ const Inicio = () => {
         <div id="inicio" style={styles.container}>
             <div>
                 <h1 style={styles.h1}>Catalogo <br/> Valka.</h1>
-                <p style={styles.p}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste deserunt porro dolores tempore assumenda praesentium dolorum dolor voluptas eveniet.</p>
+                <p style={styles.p}>Bienvenidos a la tienda Valka Oficial, donde podras encontrar los mejores buzos de la Argentina al mejor precio y con envio gratis, tirale un vistaso a nuestro productos de primera calidad.</p>
                 <a href="#" style={styles.a}>Iniciar Sesión</a>
             </div>
             <div style={styles.img}>
