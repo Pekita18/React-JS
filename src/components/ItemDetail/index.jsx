@@ -6,11 +6,10 @@ import {ItemCount} from "../ItemCount"
 
 const ItemDetail= ({produc}) => {
     let cate = produc.categoria.charAt(0).toUpperCase() + produc.categoria.slice(1);
-    const { addItem, isInCart } = useContext(Context)
+    const { addItem } = useContext(Context)
 
     const siEs = (si) => {
         addItem(produc, si)
-        isInCart(produc.id)
         document.getElementById('cart').style.display = "block";
     }
 
