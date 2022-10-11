@@ -40,7 +40,6 @@ const CartContext = ({ children }) => {
     return(
         <Context.Provider value={{cart, addItem, removeItem, clear, isInCart}}>
             {children}
-            <button onClick={console.log(cart)}></button>
         </Context.Provider>
     )
 }

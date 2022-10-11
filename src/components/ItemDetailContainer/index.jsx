@@ -19,16 +19,16 @@ const ItemDetailContainer = ({prop}) => {
     const baseDatos = [
         {id: 1, title: "Valka Blanco", description: "Este es un buzo de color blanco", price: 3000, pictureUrl: buzoBlanco, categoria: 'mujer', stock:'30'},
         {id: 2, title: "Valka Marron", description: "Este es un buzo de color rojo", price: 3500, pictureUrl: buzoMarron, categoria: 'mujer', stock:'30' },
-        {id: 3, title: "Valka Negro", description: "Este es un buzo de color negro", price: 4000, pictureUrl: buzoNegro, categoria: 'mujer', stock:'30' },
-        {id: 4, title: "Puff Faiter", description: "Este es un buzo de color rosa", price: 2500, pictureUrl: buzoRosa, categoria: 'mujer', stock:'30' },
-        {id: 5, title: "Valka Blanco", description: "Este es un buzo de color blanco", price: 2500, pictureUrl: buzoBlancoH, categoria: 'hombre', stock:'30' },
-        {id: 6, title: "Valka Gris", description: "Este es un buzo de color gris", price: 2500, pictureUrl: buzoGrisH, categoria: 'hombre', stock:'30' },
-        {id: 7, title: "Valka Verde", description: "Este es un buzo de color negro", price: 2500, pictureUrl: buzoVerdeH, categoria: 'hombre', stock:'30' },
-        {id: 8, title: "Valka Rojo", description: "Este es un buzo de color rojo", price: 2500, pictureUrl: buzoRojoH, categoria: 'hombre', stock:'30' },
-        {id: 9, title: "Valka Azul", description: "Este es un buzo de color azul para niños.", price: 2500, pictureUrl: buzoAzulN, categoria: 'niños', stock:'30' },
+        {id: 3, title: "Valka Negro", description: "Este es un buzo de color negro", price: 4200, pictureUrl: buzoNegro, categoria: 'mujer', stock:'30' },
+        {id: 4, title: "Puff Faiter", description: "Este es un buzo de color rosa", price: 4400, pictureUrl: buzoRosa, categoria: 'mujer', stock:'30' },
+        {id: 5, title: "Valka Blanco", description: "Este es un buzo de color blanco", price: 4000, pictureUrl: buzoBlancoH, categoria: 'hombre', stock:'30' },
+        {id: 6, title: "Valka Gris", description: "Este es un buzo de color gris", price: 3600, pictureUrl: buzoGrisH, categoria: 'hombre', stock:'30' },
+        {id: 7, title: "Valka Verde", description: "Este es un buzo de color negro", price: 3400, pictureUrl: buzoVerdeH, categoria: 'hombre', stock:'30' },
+        {id: 8, title: "Valka Rojo", description: "Este es un buzo de color rojo", price: 3200, pictureUrl: buzoRojoH, categoria: 'hombre', stock:'30' },
+        {id: 9, title: "Valka Azul", description: "Este es un buzo de color azul para niños.", price: 2000, pictureUrl: buzoAzulN, categoria: 'niños', stock:'30' },
         {id: 10, title: "Valka Naranja", description: "Este es un buzo de color naranaja para niños", price: 2500, pictureUrl: buzoNarajanjaN, categoria: 'niños', stock:'30' },
-        {id: 11, title: "Valka Negro", description: "Este es un buzo de color negro para niños", price: 2500, pictureUrl: buzoNegroN, categoria: 'niños', stock:'30' },
-        {id: 12, title: "Valka Violeta", description: "Este es un buzo de color violeta para niños", price: 2500, pictureUrl: buzoVIoletaN, categoria: 'niños', stock:'30' },
+        {id: 11, title: "Valka Negro", description: "Este es un buzo de color negro para niños", price: 1600, pictureUrl: buzoNegroN, categoria: 'niños', stock:'30' },
+        {id: 12, title: "Valka Violeta", description: "Este es un buzo de color violeta para niños", price: 1500, pictureUrl: buzoVIoletaN, categoria: 'niños', stock:'30' },
     ];
 
     let { ProductoId } = useParams();

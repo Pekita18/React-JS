@@ -39,6 +39,7 @@ const styles = {
         display: 'flex',
         justifyContent: 'space-between',
         margin: '100px 0px',
+        fontFamily: 'Poppins'
     },
 
     list: {

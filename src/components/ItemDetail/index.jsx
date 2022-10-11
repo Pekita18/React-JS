@@ -53,6 +53,7 @@ const ItemDetail= ({produc}) => {
 
 const styles = {
     container: {
+        fontFamily: 'Poppins',
         gridColumn: '2 / 10',
         display: 'flex',
         marginTop: '150px'

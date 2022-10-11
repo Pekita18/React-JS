@@ -36,7 +36,8 @@ const styles = {
         marginTop: '30px',
         gridColumn: '2 / 10',
         textAlign: 'center',
-        marginBottom: '50px'
+        marginBottom: '50px',
+        fontFamily: 'Poppins'
     },
 
     top: {
