@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import { Link } from 'react-router-dom';
 import { ItemDetailContainer } from "../ItemDetailContainer";
 
+const images = require.context('../../img', true);
+
 const Item = ({item}) => {
 
     const mostrar = () => {
@@ -17,7 +19,7 @@ const Item = ({item}) => {
             <div style={styles.container}>
                 <div style={styles.item}>
                     <div onMouseOver={mostrar} onMouseOut={quitar} style={styles.imgs}>
-                        <img style={styles.img} src={item.pictureUrl} alt="" />
+                        <img style={styles.img} src={ images(`./${item.pictureUrl}.png`)} alt="" />
                         <div id={item.id} style={styles.text}>
                             <h3 style={styles.h3}>{item.title}</h3>
                             <p style={styles.p}>{item.description}</p>

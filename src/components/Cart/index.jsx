@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Context } from "../CartContext";
 import './Cart.css';
 
+const images = require.context('../../img', true);
+
 const Cart = () => {
     const lodash = require('lodash');
     const { cart ,clear, removeItem } = useContext(Context);
@@ -37,7 +39,7 @@ const Cart = () => {
             <div style={styles.left}>
                 <div style={styles.top}>
                     <h4 style={styles.h4}>Tu Carrito</h4>
-                    <h4 style={styles.h4}>{cart.length} Productos</h4>
+                    <h4 style={styles.h4}>{cart.length} Producto</h4>
                 </div>
                 <div style={styles.opt}>
                     <h5 style={styles.h51}>PRODUCTOS</h5>
@@ -49,7 +51,7 @@ const Cart = () => {
                     return(
                         <div key={producto.id} style={styles.prod}>
                             <div style={styles.produc}>
-                                <img src={producto.pictureUrl} alt={producto.name} style={styles.img} />
+                                <img src={ images(`./${producto.pictureUrl}.png`)} alt={producto.name} style={styles.img} />
                                 <div style={styles.des}>
                                     <h6 style={styles.h6}>{producto.title}</h6>
                                     <span style={styles.cat}>{producto.categoria.charAt(0).toUpperCase() + producto.categoria.slice(1)}</span>
@@ -76,7 +78,7 @@ const Cart = () => {
             <div style={styles.right}>
                 <h4 style={styles.h4}>Orden</h4>
                 <div style={styles.items}>
-                    <h4 style={styles.subh4}>{cart.length} Productos</h4>
+                    <h4 style={styles.subh4}>{cart.length} Producto</h4>
                     <h4 style={styles.subh4}>${precioFinal}</h4>
                 </div>
                 <div>

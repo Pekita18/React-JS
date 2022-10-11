@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Context } from "../CartContext";
 import {ItemCount} from "../ItemCount"
 
+const images = require.context('../../img', true);
+
 const ItemDetail= ({produc}) => {
     let cate = produc.categoria.charAt(0).toUpperCase() + produc.categoria.slice(1);
     const { addItem } = useContext(Context)
@@ -26,7 +28,7 @@ const ItemDetail= ({produc}) => {
     return(
         <div style={styles.container}>
             <div style={styles.left}>
-                <img style={styles.img} src={produc.pictureUrl} alt="" />
+                <img style={styles.img} src={ images(`./${produc.pictureUrl}.png`)} alt="" />
             </div>
             <div style={styles.right}>
                 <h1 style={styles.h1}>{produc.title}</h1>
