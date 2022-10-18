@@ -22,7 +22,6 @@ const ItenListContainer = () => {
             const listProducts = data.docs.map((list) => {
                 return{...list.data(), id: list.id, ruta: `/producto/${list.id}`}
             });
-            console.log(listProducts);
             setItems(listProducts)
         })
     }, []);

@@ -1,13 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../CartContext";
 import './Cart.css';
+import { db } from  "../../firebase/firebase.js";
+import { getDocs, collection, addDoc, serverTimestamp, endBefore } from "firebase/firestore"
+import 'firebase/firestore'
+
 
 const images = require.context('../../img', true);
 
 const Cart = () => {
     const lodash = require('lodash');
     const { cart ,clear, removeItem } = useContext(Context);
+    const [codes, setCodes] = useState([]);
+
+    useEffect(() => {
+        const codesDes = collection(db, "codes");
+        getDocs(codesDes)
+        .then((data) => {
+            const listCodes = data.docs.map((list) => {
+                return{...list.data(), id: list.id}
+            });
+            console.log(listCodes)
+            setCodes(listCodes)
+        })
+    }, []);
 
     const objCantidades = cart.map((producto) => {
         return parseInt(producto.cantidad);
@@ -33,6 +51,59 @@ const Cart = () => {
             </div>
         )
     }
+
+    const validarName = () => {
+        let name = document.getElementById('name').value;
+        let errorName = document.getElementById('errorName');
+
+        name == '' ? errorName.innerHTML = "Porfavor complete este campo." : validarPhone();
+    }
+
+    const validarPhone = () => {
+        let phone = document.getElementById('phone').value;
+        let errorPhone = document.getElementById('errorPhone');
+        document.getElementById('errorName').innerHTML = "";
+
+        phone == '' ? errorPhone.innerHTML = "Porfavor complete este campo." : validarEmail();
+    }
+
+    const validarEmail = () => {
+        let errorEmail = document.getElementById('errorEmail');
+        let email = document.getElementById('email').value;
+        document.getElementById('errorPhone').innerHTML = "";
+
+        let result = email == '' ? errorEmail.innerHTML = "Porfavor complete este campo." : true;
+
+        return result;
+    }
+
+    const comprar = () => {
+        validarName();
+        validarEmail() === true ? enviar() : console.log("FALSEEE");
+    }
+
+    const enviar = () => {
+        const buyer = {
+            name: document.getElementById('name').value,
+            phone: document.getElementById('phone').value,
+            email: document.getElementById('email').value,
+        }    
+
+        const ordersCollection = collection(db, "orders");
+        addDoc(ordersCollection, {
+            buyer,
+            items: cart,
+            date: serverTimestamp(),
+            total: precioFinal,
+        })
+        .then(result => {
+            clear();
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
 
     return(
         <div style={styles.container}>
@@ -77,31 +148,54 @@ const Cart = () => {
             </div>
             <div style={styles.right}>
                 <h4 style={styles.h4}>Orden</h4>
-                <div style={styles.items}>
-                    <h4 style={styles.subh4}>{cart.length} Producto</h4>
-                    <h4 style={styles.subh4}>${precioFinal}</h4>
-                </div>
-                <div>
-                    <h5 style={styles.envios}>Envios</h5>
-                    <div className="select" tabIndex="1">
-                        <input className="selectopt" name="test" type="radio" id="opt1" checked/>
-                        <label htmlFor="opt1" className="option">Envios Estandar - $ 1100</label>
-                        <input className="selectopt" name="test" type="radio" id="opt2"/>
-                        <label htmlFor="opt2" className="option">Envio Express - $1900</label>
+                <form action="">
+                    <div style={styles.items}>
+                        <h4 style={styles.subh4}>{cart.length} Producto</h4>
+                        <h4 style={styles.subh4}>${precioFinal}</h4>
                     </div>
-                </div>
-                <div>
-                    <h5 style={styles.envios}>Codigo de Descuento</h5>
-                    <div style={styles.cod}>
-                        <input style={styles.int} type="text" placeholder="Introducir tu Codigo"/>
-                        <button style={styles.btnInt}>Aplicar</button>
+                    <div>
+                        <h5 style={styles.envios}>Nombre y Apellido</h5>
+                        <div style={styles.cod}>
+                            <input style={styles.int} type="text" placeholder="Introducir tu Nombre y Apellido" id="name" required />
+                            <p id="errorName"></p>
+                        </div>
                     </div>
-                </div>
-                <div style={styles.fin}>
-                    <h5 style={styles.h5f}>PRECIO FINAL</h5>
-                    <h5 style={styles.h5f}>${precioFinal}</h5>
-                </div>
-                <button style={styles.comp}>COMPRAR</button>
+                    <div>
+                        <h5 style={styles.envios}>Numero de Telefono</h5>
+                        <div style={styles.cod}>
+                            <input style={styles.int} type="text" placeholder="Introducir tu Telefono" id="phone" required/>
+                            <p id="errorPhone"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 style={styles.envios}>Correo Electronico</h5>
+                        <div style={styles.cod}>
+                            <input style={styles.int} type="email" placeholder="Introducir tu Mail" id="email" required/>
+                            <p id="errorEmail"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 style={styles.envios}>Envios</h5>
+                        <div className="select" tabIndex="1">
+                            <input className="selectopt" name="test" type="radio" id="opt1" defaultChecked/>
+                            <label htmlFor="opt1" className="option">Envios Estandar - $ 1100</label>
+                            <input className="selectopt" name="test" type="radio" id="opt2"/>
+                            <label htmlFor="opt2" className="option">Envio Express - $1900</label>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 style={styles.envios}>Codigo de Descuento</h5>
+                        <div style={styles.cod}>
+                            <input style={styles.int} type="text" placeholder="Introducir tu Codigo" id="descu"/>
+                            <p id="error"></p>
+                        </div>
+                    </div>
+                    <div style={styles.fin}>
+                        <h5 style={styles.h5f}>PRECIO FINAL</h5>
+                        <h5 style={styles.h5f} id="fin">${precioFinal}</h5>
+                    </div>
+                    <button style={styles.comp} onClick={comprar}>COMPRAR</button>
+                </form>
             </div>
         </div>
     )
@@ -285,7 +379,8 @@ const styles = {
 
     cod: {
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        marginBottom: '-35px'
     },
 
     int: {
