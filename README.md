@@ -1,18 +1,14 @@
-# Getting Started with Create React App
+# Bienvenido a Valka
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue iniciado con [React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Descripcion del proyecto.
 
-In the project directory, you can run:
+Valka es un proyecto de una tienda online de buzos, donde dentro encontraras variedad de categorias y modelos, ya sea para mujer, hombre o niños, hechale un vistazo.
 
-### `npm start`
+### Paso a Paso de la Compra.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Texto alternativo](/valka/Compra.gif)
 
 ### `npm test`
 
