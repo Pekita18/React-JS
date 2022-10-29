@@ -8,11 +8,4 @@ Valka es un proyecto de una tienda online de buzos, donde dentro encontraras var
 
 ### Paso a Paso de la Compra.
 
-![Texto alternativo](/valka/Compra.gif)
-
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-
+![Texto alternativo](/Compra.gif)
