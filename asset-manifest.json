@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/React-JS/static/css/main.f4f63ffa.css",
+    "main.js": "/React-JS/static/js/main.46409c91.js",
+    "static/media/buzoVioletaN.png": "/React-JS/static/media/buzoVioletaN.af06a17f9fa4e894396c.png",
+    "static/media/buzoGrisH.png": "/React-JS/static/media/buzoGrisH.9b6516ee94ba8057afec.png",
+    "static/media/buzoRosa.png": "/React-JS/static/media/buzoRosa.afcd1f6ef030b63af964.png",
+    "static/media/buzoVerdeH.png": "/React-JS/static/media/buzoVerdeH.f69937ee72ecfd79846f.png",
+    "static/media/buzoMarron.png": "/React-JS/static/media/buzoMarron.afc362b1cf1787600884.png",
+    "static/media/buzoBlancoH.png": "/React-JS/static/media/buzoBlancoH.25162189a10cb706904f.png",
+    "static/media/inicio.png": "/React-JS/static/media/inicio.612ca8c41001893abaf5.png",
+    "static/media/buzoAzulN.png": "/React-JS/static/media/buzoAzulN.81562b7f16f5c84c29c3.png",
+    "static/media/buzoNaranjaN.png": "/React-JS/static/media/buzoNaranjaN.cff76dbb182d7b69d6a6.png",
+    "static/media/buzoNegroN.png": "/React-JS/static/media/buzoNegroN.5b20f7b55cd9697c701f.png",
+    "static/media/buzoBlanco.png": "/React-JS/static/media/buzoBlanco.15939d73638a2a609721.png",
+    "static/media/buzoRojoH.png": "/React-JS/static/media/buzoRojoH.177e074f5f0ce928ece3.png",
+    "static/media/buzoNegro.png": "/React-JS/static/media/buzoNegro.24b409d0553256bb19db.png",
+    "index.html": "/React-JS/index.html",
+    "main.f4f63ffa.css.map": "/React-JS/static/css/main.f4f63ffa.css.map",
+    "main.46409c91.js.map": "/React-JS/static/js/main.46409c91.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f4f63ffa.css",
+    "static/js/main.46409c91.js"
+  ]
+}
