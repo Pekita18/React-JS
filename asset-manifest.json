@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-js/static/css/main.f4f63ffa.css",
-    "main.js": "/react-js/static/js/main.a1e30707.js",
+    "main.js": "/react-js/static/js/main.63d129b7.js",
     "static/media/buzoVioletaN.png": "/react-js/static/media/buzoVioletaN.af06a17f9fa4e894396c.png",
     "static/media/buzoGrisH.png": "/react-js/static/media/buzoGrisH.9b6516ee94ba8057afec.png",
     "static/media/buzoRosa.png": "/react-js/static/media/buzoRosa.afcd1f6ef030b63af964.png",
@@ -17,10 +17,10 @@
     "static/media/buzoNegro.png": "/react-js/static/media/buzoNegro.24b409d0553256bb19db.png",
     "index.html": "/react-js/index.html",
     "main.f4f63ffa.css.map": "/react-js/static/css/main.f4f63ffa.css.map",
-    "main.a1e30707.js.map": "/react-js/static/js/main.a1e30707.js.map"
+    "main.63d129b7.js.map": "/react-js/static/js/main.63d129b7.js.map"
   },
   "entrypoints": [
     "static/css/main.f4f63ffa.css",
-    "static/js/main.a1e30707.js"
+    "static/js/main.63d129b7.js"
   ]
 }
